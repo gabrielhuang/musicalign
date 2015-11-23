@@ -1,0 +1,1 @@
+nohup timidity -iA > /dev/null &
