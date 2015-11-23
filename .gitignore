@@ -1,0 +1,5 @@
+generated/
+.*.swp
+.ipynb_checkpoints/
+data/*.mp3
+data/*.wav
