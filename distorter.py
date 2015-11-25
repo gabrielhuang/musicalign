@@ -392,7 +392,7 @@ def random_distort(pattern, distorters=None):
         distorters = [TempoDistorter(), TimeNoiseDistorter()]
         for distorter in distorters:
             distorter.randomize()
-    current = simple
+    current = pattern
     for i, distorter in enumerate(distorters):
         keep_stamps = i > 0
         current = distorter.distort(current, keep_stamps)
