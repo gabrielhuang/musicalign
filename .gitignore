@@ -1,4 +1,5 @@
 generated/
+*.pyc
 .*.swp
 .ipynb_checkpoints/
 data/*.mp3
