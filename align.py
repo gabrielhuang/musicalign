@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def align_frame_to_frame(pattern, stride):
     '''
     Parameters
