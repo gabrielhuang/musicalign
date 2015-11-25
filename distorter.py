@@ -375,3 +375,26 @@ class TimeNoiseDistorter(Distorter):
         new_pattern.make_ticks_rel()
         return new_pattern
 
+
+def random_distort(pattern, distorters=None):
+    '''
+    Distort a simple pattern by applying a chain
+    for distortions on it.
+    
+    Parameters
+    ----------
+    pattern : MidiPattern
+        pattern to distort
+    distorters : list of Distorter
+        distorters to apply
+    '''
+    if not distorters:
+        distorters = [TempoDistorter(), TimeNoiseDistorter()]
+        for distorter in distorters:
+            distorter.randomize()
+    current = simple
+    for i, distorter in enumerate(distorters):
+        keep_stamps = i > 0
+        current = distorter.distort(current, keep_stamps)
+    return current
+
